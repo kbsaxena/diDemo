@@ -5,13 +5,13 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Primary //Marking this as primary always calls this bean when there is a conflict between beans at runtime
-@Profile("english")
-public class PrimaryGreetingService implements GreetingService {
+@Primary //if we have 2 classes as Primary then it matches by profile
+@Profile("spanish")
+public class PrimarySpanishGreetingService implements GreetingService {
 
 	@Override
 	public String sayHello() {
-		return "Its Primary Greeting Service";
+		return "Su servicio principal de saludo";
 	}
 
 }
