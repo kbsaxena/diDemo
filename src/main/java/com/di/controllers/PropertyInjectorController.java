@@ -9,7 +9,7 @@ import com.di.services.GreetingService;
 public class PropertyInjectorController {
 	
 	@Autowired
-	public GreetingService greetingServiceImpl; //the name is important as with this name only it searches the bean/class
+	public GreetingService greetingServiceImpl; //the name is important as with this name only it searches the bean/class, this can be used instead of qualifier
 	
 	public String sayHello() {
 		return greetingServiceImpl.sayHello();
