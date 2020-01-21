@@ -1,5 +1,6 @@
 package com.di.controllers;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import com.di.services.GreetingService;
@@ -10,8 +11,7 @@ public class ConstructorInjectionController {
     
 	//@Autowired annotation is not mandatory...so its optional
 	//From release 4.2 autowiring is auto enabled for constructor based DI
-	public ConstructorInjectionController(GreetingService greetService) {
-		super();
+	public ConstructorInjectionController(@Qualifier("constructorGreetingService") GreetingService greetService) {
 		this.greetService = greetService;
 	}
 	

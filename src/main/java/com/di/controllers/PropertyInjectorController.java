@@ -9,9 +9,9 @@ import com.di.services.GreetingService;
 public class PropertyInjectorController {
 	
 	@Autowired
-	public GreetingService greetService;
+	public GreetingService greetingServiceImpl; //the name is important as with this name only it searches the bean/class
 	
 	public String sayHello() {
-		return greetService.sayHello();
+		return greetingServiceImpl.sayHello();
 	}
 }

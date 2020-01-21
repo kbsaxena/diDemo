@@ -14,7 +14,7 @@ public class PropertyInjectedControllerTest {
 	@Before
 	public void setUp() {
 		propertyInjectorController = new PropertyInjectorController();
-		propertyInjectorController.greetService = new GreetingServiceImpl();
+		propertyInjectorController.greetingServiceImpl = new GreetingServiceImpl();
 	}
 	
 	@Test
