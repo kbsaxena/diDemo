@@ -1,0 +1,3 @@
+Points to Ponder
+
+-If application.properties and application.yml both are present then it reads the property from both files simultaneously

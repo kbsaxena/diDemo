@@ -8,6 +8,7 @@ import com.di.controllers.ConstructorInjectionController;
 import com.di.controllers.DiController;
 import com.di.controllers.PropertyInjectorController;
 import com.di.controllers.SetterInjectionController;
+import com.di.data.BookSource;
 import com.di.data.DataSource;
 import com.di.data.DataSourceNew;
 
@@ -31,6 +32,9 @@ public class DiDemoApplication {
 		
 		DataSourceNew dsn = (DataSourceNew)ctx.getBean(DataSourceNew.class);
 		System.out.println("New Property Username is :" + dsn.getUsername());
+		
+		BookSource bs = (BookSource)ctx.getBean(BookSource.class);
+		System.out.println("Book :" + bs.getBookName() + " is written by " + bs.getAuthorName());
 		
 		ctx.close();
 	}
