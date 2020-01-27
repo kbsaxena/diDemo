@@ -8,6 +8,7 @@ import com.di.controllers.ConstructorInjectionController;
 import com.di.controllers.DiController;
 import com.di.controllers.PropertyInjectorController;
 import com.di.controllers.SetterInjectionController;
+import com.di.data.DataSource;
 
 @SpringBootApplication
 public class DiDemoApplication {
@@ -20,6 +21,12 @@ public class DiDemoApplication {
 		System.out.println(ctx.getBean(PropertyInjectorController.class).sayHello());
 		System.out.println(ctx.getBean(SetterInjectionController.class).sayHello());
 		System.out.println(ctx.getBean(ConstructorInjectionController.class).sayHello());
+		
+		DataSource ds = (DataSource)ctx.getBean(DataSource.class);
+		
+		System.out.println("Username is :" + ds.getUsername());
+		System.out.println("Password is :" + ds.getPassword());
+		System.out.println("Url is :" + ds.getUrl());
 		
 		ctx.close();
 	}
