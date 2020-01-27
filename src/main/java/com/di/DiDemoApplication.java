@@ -9,6 +9,7 @@ import com.di.controllers.DiController;
 import com.di.controllers.PropertyInjectorController;
 import com.di.controllers.SetterInjectionController;
 import com.di.data.DataSource;
+import com.di.data.DataSourceNew;
 
 @SpringBootApplication
 public class DiDemoApplication {
@@ -27,6 +28,9 @@ public class DiDemoApplication {
 		System.out.println("Username is :" + ds.getUsername());
 		System.out.println("Password is :" + ds.getPassword());
 		System.out.println("Url is :" + ds.getUrl());
+		
+		DataSourceNew dsn = (DataSourceNew)ctx.getBean(DataSourceNew.class);
+		System.out.println("New Property Username is :" + dsn.getUsername());
 		
 		ctx.close();
 	}
